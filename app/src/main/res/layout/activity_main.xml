@@ -4,54 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ocean__2_"
+    android:background="@drawable/ocean_wave"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="343dp"
-        android:layout_height="162dp"
-        android:layout_marginTop="300dp"
+        android:id="@+id/gangplank"
+        android:layout_width="300dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="256dp"
+        android:src="@drawable/gangplank"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/gangplank" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/geoff"
+        android:layout_width="135dp"
+        android:layout_height="321dp"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="95dp"
+        android:src="@drawable/pirate_geoff"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars[5]" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/displayWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="350dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:text="Word"
-        android:textSize="36sp"
+        android:text="@string/word"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        android:textSize="40sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <EditText
         android:id="@+id/guessLetter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="65dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginRight="128dp"
-        android:background="#FFFFFF"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:background="#00FFFFFF"
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
@@ -60,5 +65,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginRight="75dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guessLetter"></LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
