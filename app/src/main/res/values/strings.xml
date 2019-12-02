@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Geoff and Friends</string>
+    <string name="new_game">New Game</string>
+    <string name="guess_a_letter">Guess a Letter</string>
+</resources>
