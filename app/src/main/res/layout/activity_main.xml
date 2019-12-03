@@ -38,14 +38,25 @@
         android:layout_marginTop="350dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
+        android:layout_marginBottom="100dp"
         android:text="@string/word"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         android:textSize="40sp"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/incorrectLetters" />
+
+    <Button
+        android:id="@+id/submitGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        app:layout_constraintEnd_toEndOf="@+id/guessLetter"
+        app:layout_constraintStart_toStartOf="@+id/guessLetter"
+        app:layout_constraintTop_toBottomOf="@+id/guessLetter" />
 
     <EditText
         android:id="@+id/guessLetter"
@@ -56,28 +67,27 @@
         android:layout_marginTop="65dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
-        android:background="#00FFFFFF"
         android:ems="10"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:text="@string/guess_a_letter"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <TextView
+        android:id="@+id/incorrectLetters"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginLeft="75dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginRight="75dp"
-        android:orientation="horizontal"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guessLetter"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/submitGuess"></TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
