@@ -86,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean checkLetter(char letter) {
-        if (letters.contains(letter)) {
+        if (letters.contains(Character.toLowerCase(letter))) {
             for (int i = 0; i < letters.size(); i++) {
-                if (letters.get(i) == letter) {
+                if (letters.get(i) == Character.toLowerCase(letter)) {
                     result.set(i, letter);
                 }
             }
