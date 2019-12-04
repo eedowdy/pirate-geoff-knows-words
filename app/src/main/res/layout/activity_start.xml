@@ -9,6 +9,7 @@
 
     <Button
         android:id="@+id/newGameButton"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="174dp"
         android:layout_height="47dp"
         android:layout_marginStart="128dp"
@@ -16,10 +17,13 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="128dp"
         android:layout_marginRight="128dp"
-        android:shadowColor="@color/colorPrimary"
+        android:shadowColor="@color/colorAccent"
         android:text="@string/new_game"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColorHighlight="#00090303"
+        android:textColorLink="#00000000"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +39,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="2dp"
-        android:text="Pirate Geoff Knows Words"
+        android:text="@string/pirate_geoff_knows_words"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="36sp"
         app:fontFamily="@font/pirata_one"
@@ -46,8 +50,8 @@
 
     <ImageView
         android:id="@+id/pirateGeoff"
-        android:layout_width="331dp"
-        android:layout_height="390dp"
+        android:layout_width="337dp"
+        android:layout_height="458dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="126dp"
@@ -56,9 +60,9 @@
         android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newGameButton"
-        app:layout_constraintVertical_bias="0.933"
+        app:layout_constraintVertical_bias="0.561"
         app:srcCompat="@drawable/pirate_geoff" />
 </androidx.constraintlayout.widget.ConstraintLayout>

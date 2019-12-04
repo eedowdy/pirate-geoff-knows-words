@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">Geoff and Friends</string>
+    <string name="app_name">Pirate Geoff Knows Words</string>
     <string name="new_game">New Game</string>
     <string name="guess_a_letter">Guess a Letter</string>
     <string name="word">Word</string>
+    <string name="submit">submit</string>
+    <string name="pirate_geoff_knows_words">Pirate Geoff Knows Words</string>
+    <string name="play_again">Play Again!</string>
 </resources>

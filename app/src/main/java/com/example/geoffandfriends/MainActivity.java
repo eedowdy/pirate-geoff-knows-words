@@ -2,6 +2,7 @@ package com.example.geoffandfriends;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -24,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Character> result;
 
     private ArrayList<Character> incorrectLetters;
+
+    private TextView displayWord = findViewById(R.id.displayWord);
+
+    public static boolean WON = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +70,15 @@ public class MainActivity extends AppCompatActivity {
             guessLetter.setText("");
             guessLetter.onEditorAction(EditorInfo.IME_ACTION_DONE);
         });
+
+        //if (checkForWinner()) {
+          //  Intent end = new Intent(this, EndActivity.class);
+            //startActivity(end);
+            //finish();
+        //}
     }
 
     private void updateDisplay() {
-        TextView displayWord = findViewById(R.id.displayWord);
         StringBuilder sb = new StringBuilder();
         for (char letter : result) {
             sb.append(letter);
@@ -96,4 +106,15 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
+
+    /**
+    public boolean checkForWinner() {
+        if (displayWord.getText().length() == word.length()) {
+            WON = true;
+        } else {
+            WON  = false;
+        }
+        return WON;
+    }
+     */
 }
