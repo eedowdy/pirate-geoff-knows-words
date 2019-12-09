@@ -6,4 +6,7 @@
     <string name="submit">submit</string>
     <string name="pirate_geoff_knows_words">Pirate Geoff Knows Words</string>
     <string name="play_again">Play Again!</string>
+    <string name="you_won">You Won!</string>
+    <string name="game_over">Game Over!</string>
+    <string name="you_won">You Won!</string>
 </resources>

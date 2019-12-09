@@ -15,7 +15,7 @@ public class StartActivity extends AppCompatActivity {
 
         Button startGame = findViewById(R.id.newGameButton);
         startGame.setOnClickListener(unused -> {
-            Intent intent = new Intent(this, MainActivity.class);
+            final Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
         });

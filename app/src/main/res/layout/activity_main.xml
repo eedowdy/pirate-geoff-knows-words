@@ -19,11 +19,11 @@
 
     <ImageView
         android:id="@+id/geoff"
-        android:layout_width="135dp"
-        android:layout_height="321dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="95dp"
+        android:layout_width="154dp"
+        android:layout_height="236dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="116dp"
         android:contentDescription="TODO"
         android:src="@drawable/pirate_geoff"
         android:visibility="visible"
