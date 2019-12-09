@@ -14,12 +14,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
     private int turns;
-
-    private String word;
 
     private ArrayList<Character> letters;
 
@@ -27,14 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Character> incorrectLetters;
 
+    private String word;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        word = "geoffrey";
-
         turns = 6;
+        word = getWord();
 
         letters = new ArrayList<>();
         result = new ArrayList<>();
@@ -57,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
             } else if (!checkLetter(guessLetter.getText().charAt(0))){
                 turns--;
-                ObjectAnimator animation = ObjectAnimator.ofFloat(geoff, "translationX", geoff.getX() - 40f);
+                ObjectAnimator animation = ObjectAnimator.ofFloat(geoff,
+                        "translationX", geoff.getX() - 25f);
                 animation.setDuration(500);
                 animation.start();
                 if (turns == 0) {
@@ -86,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         }
         displayWord.setText(sb.toString());
 
-        TextView incorrect = findViewById(R.id.incorrect);
+        TextView incorrect = findViewById(R.id.incorrectLetters);
         StringBuilder sbs = new StringBuilder();
         for (char letter : incorrectLetters) {
             sb.append(letter);
@@ -107,5 +113,11 @@ public class MainActivity extends AppCompatActivity {
             incorrectLetters.add(letter);
             return false;
         }
+    }
+
+    private String getWord() {
+        int number = (int)(Math.random() * 524);
+        String[] words = getResources().getStringArray(R.array.words);
+        return words[number];
     }
 }
