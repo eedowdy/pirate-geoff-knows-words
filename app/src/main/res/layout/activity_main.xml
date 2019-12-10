@@ -11,28 +11,19 @@
         android:id="@+id/gangplank"
         android:layout_width="300dp"
         android:layout_height="152dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="288dp"
         android:src="@drawable/gangplank"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/incorrect"
-        android:layout_width="89dp"
-        android:layout_height="32dp"
-        android:textSize="18sp"
-        app:fontFamily="@font/pirata_one"
-        tools:layout_editor_absoluteX="263dp"
-        tools:layout_editor_absoluteY="200dp" />
-
     <ImageView
         android:id="@+id/geoff"
         android:layout_width="154dp"
         android:layout_height="236dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="148dp"
         android:contentDescription="TODO"
         android:src="@drawable/pirate_geoff"
         android:visibility="visible"
@@ -72,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:ems="10"
@@ -81,6 +72,7 @@
         android:inputType="text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,12 +82,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="215dp"
+        android:layout_marginTop="300dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:textSize="24sp"
+        app:fontFamily="@font/pirata_one"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitGuess"/>
+        app:layout_constraintTop_toBottomOf="@+id/submitGuess" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

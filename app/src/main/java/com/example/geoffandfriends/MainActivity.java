@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             turns--;
             ImageView geoff = findViewById(R.id.geoff);
             ObjectAnimator animation = ObjectAnimator.ofFloat(geoff,
-                    "translationX", geoff.getX() - 25f);
+                    "translationX", geoff.getX() - 20f);
             animation.setDuration(500);
             animation.start();
             incorrectLetters.add(letter);
