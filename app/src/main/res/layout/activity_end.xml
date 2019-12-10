@@ -11,10 +11,10 @@
         android:id="@+id/playAgainButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="176dp"
-        android:layout_height="72dp"
+        android:layout_height="55dp"
         android:layout_marginStart="128dp"
         android:layout_marginLeft="128dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="128dp"
         android:layout_marginRight="128dp"
         android:shadowColor="@color/colorAccent"
@@ -25,9 +25,20 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameOver" />
+
+    <ImageView
+        android:id="@+id/pirateShip"
+        android:layout_width="191dp"
+        android:layout_height="268dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginLeft="204dp"
+        android:layout_marginTop="292dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pirateship__2_" />
 
     <TextView
         android:id="@+id/winnerLoser"
@@ -52,13 +63,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="95dp"
         android:layout_marginLeft="95dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="95dp"
         android:layout_marginRight="95dp"
         android:text="@string/game_over"
         android:textSize="56sp"
         app:fontFamily="@font/pirata_one"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,10 +82,10 @@
         android:layout_marginLeft="78dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/pirate_geoff" />
 
@@ -81,9 +93,6 @@
         android:id="@+id/treasureChest"
         android:layout_width="181dp"
         android:layout_height="168dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/treasurechest2" />

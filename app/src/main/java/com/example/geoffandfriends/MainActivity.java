@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         updateDisplay();
 
         EditText guessLetter = findViewById(R.id.guessLetter);
+        guessLetter.setOnClickListener(v -> guessLetter.setText(""));
         Button submitGuess = findViewById(R.id.submitGuess);
         submitGuess.setOnClickListener(unused -> {
             if (guessLetter.getText().length() != 1 || !Character.isLetter(guessLetter.getText().charAt(0))) {

@@ -17,6 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/incorrect"
+        android:layout_width="89dp"
+        android:layout_height="32dp"
+        android:textSize="18sp"
+        app:fontFamily="@font/pirata_one"
+        tools:layout_editor_absoluteX="263dp"
+        tools:layout_editor_absoluteY="200dp" />
+
     <ImageView
         android:id="@+id/geoff"
         android:layout_width="154dp"
