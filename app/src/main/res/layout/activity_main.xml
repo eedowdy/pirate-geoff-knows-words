@@ -21,8 +21,8 @@
         android:id="@+id/geoff"
         android:layout_width="154dp"
         android:layout_height="236dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="116dp"
         android:contentDescription="TODO"
         android:src="@drawable/pirate_geoff"
@@ -77,17 +77,16 @@
 
     <TextView
         android:id="@+id/incorrectLetters"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="215dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitGuess"></TextView>
+        app:layout_constraintTop_toBottomOf="@+id/submitGuess"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

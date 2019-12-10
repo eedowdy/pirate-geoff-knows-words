@@ -3,24 +3,17 @@ package com.example.geoffandfriends;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
     private int turns;
@@ -52,24 +45,18 @@ public class MainActivity extends AppCompatActivity {
 
         updateDisplay();
 
-        ImageView geoff = findViewById(R.id.geoff);
         EditText guessLetter = findViewById(R.id.guessLetter);
         Button submitGuess = findViewById(R.id.submitGuess);
         submitGuess.setOnClickListener(unused -> {
-            if (guessLetter.getText().length() != 1) {
+            if (guessLetter.getText().length() != 1 || !Character.isLetter(guessLetter.getText().charAt(0))) {
                 Toast toast = Toast.makeText(getApplicationContext(), "Invalid input", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.TOP, 0, 25);
                 toast.show();
             } else if (!checkLetter(guessLetter.getText().charAt(0))){
-                turns--;
-                ObjectAnimator animation = ObjectAnimator.ofFloat(geoff,
-                        "translationX", geoff.getX() - 25f);
-                animation.setDuration(500);
-                animation.start();
                 if (turns == 0) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "You lost :(", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.TOP, 0, 25);
-                    toast.show();
+                    Intent intent = new Intent(this, EndActivity.class);
+                    intent.putExtra("won", false);
+                    startActivity(intent);
                 } else {
                     guessLetter.onEditorAction(EditorInfo.IME_ACTION_DONE);
                     Toast toast = Toast.makeText(getApplicationContext(), "Try again.", Toast.LENGTH_SHORT);
@@ -80,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
             updateDisplay();
             guessLetter.setText("");
             guessLetter.onEditorAction(EditorInfo.IME_ACTION_DONE);
+            if (!result.contains('_')) {
+                Intent intent = new Intent(this, EndActivity.class);
+                intent.putExtra("won", true);
+                startActivity(intent);
+            }
         });
     }
 
@@ -95,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
         TextView incorrect = findViewById(R.id.incorrectLetters);
         StringBuilder sbs = new StringBuilder();
         for (char letter : incorrectLetters) {
-            sb.append(letter);
-            sb.append("  ");
+            sbs.append(letter);
+            sbs.append("  ");
         }
         incorrect.setText(sbs.toString());
     }
@@ -109,10 +101,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             return true;
-        } else {
+        } else if (!incorrectLetters.contains(letter)) {
+            turns--;
+            ImageView geoff = findViewById(R.id.geoff);
+            ObjectAnimator animation = ObjectAnimator.ofFloat(geoff,
+                    "translationX", geoff.getX() - 25f);
+            animation.setDuration(500);
+            animation.start();
             incorrectLetters.add(letter);
-            return false;
         }
+        return false;
     }
 
     private String getWord() {
