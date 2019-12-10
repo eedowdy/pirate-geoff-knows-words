@@ -3,11 +3,14 @@ package com.example.geoffandfriends;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.pirate_music);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+
         turns = 6;
         word = getWord();
 
@@ -50,29 +57,34 @@ public class MainActivity extends AppCompatActivity {
         guessLetter.setOnClickListener(v -> guessLetter.setText(""));
         Button submitGuess = findViewById(R.id.submitGuess);
         submitGuess.setOnClickListener(unused -> {
+            InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                    InputMethodManager.HIDE_NOT_ALWAYS);
             if (guessLetter.getText().length() != 1 || !Character.isLetter(guessLetter.getText().charAt(0))) {
                 Toast toast = Toast.makeText(getApplicationContext(), "Invalid input", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.TOP, 0, 25);
                 toast.show();
             } else if (!checkLetter(guessLetter.getText().charAt(0))){
                 if (turns == 0) {
+                    mediaPlayer.stop();
                     Intent intent = new Intent(this, EndActivity.class);
                     intent.putExtra("won", false);
                     startActivity(intent);
+                    finish();
                 } else {
-                    guessLetter.onEditorAction(EditorInfo.IME_ACTION_DONE);
                     Toast toast = Toast.makeText(getApplicationContext(), "Try again.", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.TOP, 0, 25);
                     toast.show();
                 }
             }
-            updateDisplay();
             guessLetter.setText("");
-            guessLetter.onEditorAction(EditorInfo.IME_ACTION_DONE);
+            updateDisplay();
             if (!result.contains('_')) {
+                mediaPlayer.stop();
                 Intent intent = new Intent(this, EndActivity.class);
                 intent.putExtra("won", true);
                 startActivity(intent);
+                finish();
             }
         });
     }

@@ -33,9 +33,7 @@
         android:id="@+id/pirateShip"
         android:layout_width="191dp"
         android:layout_height="268dp"
-        android:layout_marginStart="204dp"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="225dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pirateship__2_" />
